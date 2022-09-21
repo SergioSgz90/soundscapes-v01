@@ -7,7 +7,8 @@ A project build on React Redux with Typescript and Firebase.
 
 ## Info
 
-Soundscapes it's an app designed to manage sound files with their geolocation to provide a view of where the sounds where captured.
+Soundscapes it's an app designed to manage sound files with their geolocation to provide a view of where the sounds where captured:
+
 ![Design](https://user-images.githubusercontent.com/101208273/191495380-dc60648c-3699-4d4c-8588-72d9a9b6dbbd.png)
 
 
