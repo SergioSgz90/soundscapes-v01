@@ -3,7 +3,7 @@
 
 # Soundscapes v01
 
-A project build on React Redux with Typescript and Firebase.
+A project build on React with Typescript and Firebase.
 
 ## Info
 
