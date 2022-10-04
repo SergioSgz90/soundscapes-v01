@@ -1,14 +1,17 @@
-import { GoogleMap, useLoadScript, MarkerF, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, MarkerF, InfoWindowF} from '@react-google-maps/api';
 import { useMemo, useContext, useRef, useCallback, useState } from 'react';
 import { SoundListContext } from '../../context/soundList.context';
-import { iSound } from '../../models/sound';
+
 
 type MapOptions = google.maps.MapOptions;
 
 export const MapSection = () => {
   const { sounds, selectSound } = useContext(SoundListContext);
 
+  
    const [selected, setSelected] = useState <number|null>(null)
+
+  
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY as string,
@@ -38,22 +41,21 @@ export const MapSection = () => {
           options={options}
         >
           {sounds.map((sound) => (
-          
-              <MarkerF
-                key={sound.id}
-                position={{
-                  lat: Number(sound.latitude),
-                  lng: Number(sound.longitude),
-                }}
-                icon={{
-                  url: sound.picture,
-                  scaledSize: new window.google.maps.Size(75, 75),
-                }}
-                onClick={() => setSelected(sound.id)}
-                onLoad={onMapLoad}
-              />
-           
+            <MarkerF
+              key={sound.id}
+              position={{
+                lat: Number(sound.latitude),
+                lng: Number(sound.longitude),
+              }}
+              icon={{
+                url: sound.picture,
+                scaledSize: new window.google.maps.Size(75, 75),
+              }}
+              onClick={() => setSelected(sound.id)}
+              onLoad={onMapLoad}
+            />
           ))}
+
         </GoogleMap>
       </div>
     );
